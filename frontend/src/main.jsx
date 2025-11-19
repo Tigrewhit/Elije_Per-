@@ -5,25 +5,35 @@ import App from './App'
 import './styles/site.css'
 import './i18n'
 
-// PWA registration automática
+// 🎯 SERVICE WORKER NATIVO - APP 100% OFFLINE
 import { registerSW } from 'virtual:pwa-register'
 
 const updateSW = registerSW({
   onNeedRefresh() {
-    console.log('🔄 Nueva versión disponible')
+    console.log('🔄 Nueva versión de la app nativa disponible')
   },
   onOfflineReady() {
-    console.log('📱 App OFFLINE-READY - Funciona sin internet')
-    // Mostrar notificación al usuario
-    if ('Notification' in window) {
-      new Notification('¡App lista para usar sin internet!', {
+    console.log('🎉 APP NATIVA LISTA - Funciona como WhatsApp offline')
+    
+    // Notificación que la app es completamente offline
+    if ('Notification' in window && Notification.permission === 'granted') {
+      new Notification('¡App instalada! Ya funciona sin internet', {
+        body: 'Navega entre páginas sin conexión como una app nativa',
         icon: '/assets/logos/logo_elije_peru.jpg',
         badge: '/assets/logos/logo_elije_peru.jpg'
       })
     }
+    
+    // Log para debug
+    console.log('✅ ENRUTAMIENTO LOCAL ACTIVADO - No necesita servidor')
   },
   immediate: true
 })
+
+// Pedir permisos de notificación
+if ('Notification' in window && Notification.permission === 'default') {
+  Notification.requestPermission()
+}
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
