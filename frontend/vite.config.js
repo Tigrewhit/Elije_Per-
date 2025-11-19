@@ -32,13 +32,52 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,jpg,jpeg,svg}'],
-        globIgnores: ['**/videos/**'],
-        maximumFileSizeToCacheInBytes: 5000000, // 5MB
+        globPatterns: ['**/*.{js,css,html,ico,png,jpg,jpeg,svg,mp4}'],
+        maximumFileSizeToCacheInBytes: 50000000, // 50MB para incluir todo
         navigateFallback: '/index.html',
+        navigateFallbackDenylist: [/^\/_/, /\/[^/?]+\.[^/]+$/],
         cleanupOutdatedCaches: true,
         skipWaiting: true,
-        clientsClaim: true
+        clientsClaim: true,
+        runtimeCaching: [
+          {
+            urlPattern: ({ request }) => request.mode === 'navigate',
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'pages-cache',
+              networkTimeoutSeconds: 3,
+              plugins: [
+                {
+                  cacheKeyWillBeUsed: async ({ request }) => {
+                    return '/index.html'
+                  }
+                }
+              ]
+            }
+          },
+          {
+            urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'images-cache',
+              expiration: {
+                maxEntries: 100,
+                maxAgeSeconds: 60 * 60 * 24 * 30
+              }
+            }
+          },
+          {
+            urlPattern: /\.(?:mp4|webm|ogg)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'videos-cache',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 7
+              }
+            }
+          }
+        ]
       },
       devOptions: {
         enabled: true
