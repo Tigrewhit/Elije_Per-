@@ -6,57 +6,85 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'prompt',
-      injectRegister: 'inline',
-      strategies: 'injectManifest',
-      srcDir: 'public',
-      filename: 'custom-sw.js',
-      includeAssets: ['favicon.ico', 'assets/logos/logo_elije_peru.jpg', '_redirects'],
+      registerType: 'autoUpdate',
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,jpg,jpeg,svg,mp4,webm,woff,woff2}'],
+        maximumFileSizeToCacheInBytes: 100000000, // 100MB
+        runtimeCaching: [
+          // TODAS las páginas HTML - CACHE FIRST (offline priority)
+          {
+            urlPattern: ({ request }) => request.mode === 'navigate',
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'html-cache',
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 60 * 60 * 24 * 365 // 1 año
+              }
+            }
+          },
+          // TODOS los archivos JS/CSS - CACHE FIRST
+          {
+            urlPattern: /\.(?:js|css)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'static-cache',
+              expiration: {
+                maxEntries: 100,
+                maxAgeSeconds: 60 * 60 * 24 * 365
+              }
+            }
+          },
+          // TODAS las imágenes - CACHE FIRST
+          {
+            urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp|ico)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'images-cache',
+              expiration: {
+                maxEntries: 200,
+                maxAgeSeconds: 60 * 60 * 24 * 365
+              }
+            }
+          },
+          // Videos - CACHE FIRST
+          {
+            urlPattern: /\.(?:mp4|webm|ogg)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'videos-cache',
+              expiration: {
+                maxEntries: 20,
+                maxAgeSeconds: 60 * 60 * 24 * 90
+              }
+            }
+          }
+        ],
+        navigateFallback: '/index.html',
+        navigateFallbackDenylist: [/^\/_/, /\/[^/?]+\.[^/]+$/],
+        skipWaiting: true,
+        clientsClaim: true
+      },
       manifest: {
-        name: 'Elige Perú - Elecciones Generales 2026',
+        name: 'Elige Perú - Elecciones 2026',
         short_name: 'Elige Perú',
-        description: 'Aplicación electoral offline-first. Funciona completamente sin internet para consultar candidatos, calendario y normativa electoral.',
+        description: 'App electoral que funciona sin internet',
         theme_color: '#003770',
         background_color: '#ffffff',
         display: 'standalone',
-        orientation: 'portrait',
-        scope: '/',
         start_url: '/',
-        categories: ['government', 'education', 'politics'],
-        lang: 'es-PE',
         icons: [
           {
             src: 'assets/logos/logo_elije_peru.jpg',
             sizes: '192x192',
-            type: 'image/jpeg',
-            purpose: 'any maskable'
+            type: 'image/jpeg'
           },
           {
             src: 'assets/logos/logo_elije_peru.jpg',
-            sizes: '512x512',
-            type: 'image/jpeg',
-            purpose: 'any maskable'
-          }
-        ],
-        shortcuts: [
-          {
-            name: 'Candidatos',
-            short_name: 'Candidatos',
-            description: 'Ver candidatos presidenciales offline',
-            url: '/candidates',
-            icons: [{'src': 'assets/logos/logo_elije_peru.jpg', 'sizes': '96x96'}]
-          },
-          {
-            name: 'Calendario Electoral',
-            short_name: 'Calendario',
-            description: 'Cronograma electoral offline',
-            url: '/calendar',
-            icons: [{'src': 'assets/logos/logo_elije_peru.jpg', 'sizes': '96x96'}]
+            sizes: '512x512', 
+            type: 'image/jpeg'
           }
         ]
-      },
-      devOptions: {
-        enabled: true
       }
     })
   ],

@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import { useOnlineStatus } from './hooks/useOnlineStatus'
 import OfflineLoader from './components/OfflineLoader'
+import OfflineForcer from './components/OfflineForcer'
 import PredictiveCacheProvider from './hooks/usePredictiveCache'
 import './responsive.css'
 import './styles/mobile-optimized.css'
@@ -162,6 +163,7 @@ export default function App(){
           online={isOnline} 
           serviceWorkerReady={serviceWorkerReady}
         />
+        <OfflineForcer />
         <main className="flex-1 container-mobile" style={{padding: '16px 0', maxWidth: '100%', width: '100%'}}>
           <Routes>
           <Route path="/" element={<Home/>}/>
