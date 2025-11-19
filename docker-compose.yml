@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_USER=${DB_USER:-postgres}
+      - POSTGRES_PASSWORD=${DB_PASS:-1234}
+      - POSTGRES_DB=${DB_NAME:-elijeperu}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./backend/migrations:/docker-entrypoint-initdb.d:ro
+    ports:
+      - '5432:5432'
+
+  backend:
+    build: ./backend
+    environment:
+      - DB_USER=${DB_USER:-postgres}
+      - DB_PASS=${DB_PASS:-1234}
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=${DB_NAME:-elijeperu}
+      - ADMIN_API_KEY=${ADMIN_API_KEY:-change_me}
+    ports:
+      - '4000:4000'
+    depends_on:
+      - db
+    volumes:
+      - ./backend:/app:delegated
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: 'http://backend:4000'
+    ports:
+      - '5173:80'
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  db_data:

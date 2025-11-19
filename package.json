@@ -1,0 +1,10 @@
+{
+  "name": "elijeperu-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/start-all.js",
+    "dev:backend": "cd backend && npm install && npm run dev",
+    "dev:frontend": "cd frontend && npm install && npm run dev"
+  }
+}

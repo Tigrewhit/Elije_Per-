@@ -1,0 +1,69 @@
+{
+  "header": {
+    "countdown": {
+      "days": "P'unchay",
+      "hours": "Hora",
+      "minutes": "Min",
+      "seconds": "Seg"
+    },
+    "status": {
+      "online": "🌐 Kikin",
+      "offline": "📱 Mana kikin"
+    },
+    "translate": "T'ikray",
+    "languages": {
+      "spanish": "Kastilla simi",
+      "english": "Inglés simi",
+      "quechua": "Runasimi",
+      "aymara": "Aymara simi"
+    }
+  },
+  "navigation": {
+    "home": "Qallariy",
+    "candidates": "Akllanakuq",
+    "calendar": "Intip killakuna",
+    "news": "Willakuy",
+    "tutorial": "Yachachiy"
+  },
+  "home": {
+    "title": "Akllana Piruw",
+    "subtitle": "Qampa akllasqayki suyup hamuq pachapaq allin",
+    "description": "2026 akllanakunapi lloqsiy tukuy willakunawan akllanakuqkunamanta, akllana intip killankunamanta, musuq willakuykunamanta."
+  },
+  "candidates": {
+    "title": "Akllanakuqkuna 2026",
+    "filterBy": "Akllana:",
+    "allPositions": "Llapan llamk'aykuna",
+    "president": "Umalliq",
+    "congress": "Kongreso",
+    "regional": "Suyupi",
+    "municipal": "Llaqtapi",
+    "noResults": "Mana akllanakuqkuna tarikusqa."
+  },
+  "calendar": {
+    "title": "Akllana Intip Killankuna 2026",
+    "filterBy": "Akllana:",
+    "allPhases": "Llapan t'aqakuna",
+    "registration": "Qillqakuy",
+    "campaign": "Campaña",
+    "voting": "Akllana",
+    "results": "Ruwasqakuna"
+  },
+  "news": {
+    "title": "Akllana Willakuykuna",
+    "readMore": "Aswan ñawiriy",
+    "source": "Phuyu"
+  },
+  "tutorial": {
+    "title": "Imayna akllana?",
+    "step": "Ñan",
+    "steps": [
+      "Akllana wasiyki qhawariy",
+      "DNI kaq apamuy",
+      "Akllana mesaykiman riy",
+      "Akllana p'anqayki chaskiy",
+      "Akllasqayki suti raqay",
+      "Akllasqayki urpiman churay"
+    ]
+  }
+}

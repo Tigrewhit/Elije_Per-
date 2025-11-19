@@ -1,0 +1,69 @@
+{
+  "header": {
+    "countdown": {
+      "days": "Días",
+      "hours": "Horas",
+      "minutes": "Min",
+      "seconds": "Seg"
+    },
+    "status": {
+      "online": "🌐 Online",
+      "offline": "📱 Offline"
+    },
+    "translate": "Traducir",
+    "languages": {
+      "spanish": "Español",
+      "english": "Inglés",
+      "quechua": "Quechua",
+      "aymara": "Aimara"
+    }
+  },
+  "navigation": {
+    "home": "Inicio",
+    "candidates": "Candidatos",
+    "calendar": "Calendario",
+    "news": "Noticias",
+    "tutorial": "Tutorial"
+  },
+  "home": {
+    "title": "Elige Perú",
+    "subtitle": "Tu voto cuenta para el futuro del país",
+    "description": "Participa en las elecciones 2026 con información completa sobre candidatos, calendario electoral y noticias actualizadas."
+  },
+  "candidates": {
+    "title": "Candidatos 2026",
+    "filterBy": "Filtrar por:",
+    "allPositions": "Todos los Cargos",
+    "president": "Presidente",
+    "congress": "Congreso",
+    "regional": "Regional",
+    "municipal": "Municipal",
+    "noResults": "No se encontraron candidatos."
+  },
+  "calendar": {
+    "title": "Calendario Electoral 2026",
+    "filterBy": "Filtrar por:",
+    "allPhases": "Todas las Fases",
+    "registration": "Inscripción",
+    "campaign": "Campaña",
+    "voting": "Votación",
+    "results": "Resultados"
+  },
+  "news": {
+    "title": "Noticias Electorales",
+    "readMore": "Leer más",
+    "source": "Fuente"
+  },
+  "tutorial": {
+    "title": "¿Cómo Votar?",
+    "step": "Paso",
+    "steps": [
+      "Verifica tu local de votación",
+      "Lleva tu DNI original",
+      "Acércate a tu mesa de votación",
+      "Recibe tu cédula de votación",
+      "Marca tu voto de forma clara",
+      "Deposita tu voto en el ánfora"
+    ]
+  }
+}

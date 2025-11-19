@@ -1,0 +1,69 @@
+{
+  "header": {
+    "countdown": {
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Min",
+      "seconds": "Sec"
+    },
+    "status": {
+      "online": "🌐 Online",
+      "offline": "📱 Offline"
+    },
+    "translate": "Translate",
+    "languages": {
+      "spanish": "Spanish",
+      "english": "English",
+      "quechua": "Quechua",
+      "aymara": "Aymara"
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "candidates": "Candidates",
+    "calendar": "Calendar",
+    "news": "News",
+    "tutorial": "Tutorial"
+  },
+  "home": {
+    "title": "Choose Peru",
+    "subtitle": "Your vote counts for the country's future",
+    "description": "Participate in the 2026 elections with complete information about candidates, electoral calendar and updated news."
+  },
+  "candidates": {
+    "title": "Candidates 2026",
+    "filterBy": "Filter by:",
+    "allPositions": "All Positions",
+    "president": "President",
+    "congress": "Congress",
+    "regional": "Regional",
+    "municipal": "Municipal",
+    "noResults": "No candidates found."
+  },
+  "calendar": {
+    "title": "Electoral Calendar 2026",
+    "filterBy": "Filter by:",
+    "allPhases": "All Phases",
+    "registration": "Registration",
+    "campaign": "Campaign",
+    "voting": "Voting",
+    "results": "Results"
+  },
+  "news": {
+    "title": "Electoral News",
+    "readMore": "Read more",
+    "source": "Source"
+  },
+  "tutorial": {
+    "title": "How to Vote?",
+    "step": "Step",
+    "steps": [
+      "Check your voting location",
+      "Bring your original ID",
+      "Go to your voting table",
+      "Receive your ballot",
+      "Mark your vote clearly",
+      "Deposit your vote in the ballot box"
+    ]
+  }
+}

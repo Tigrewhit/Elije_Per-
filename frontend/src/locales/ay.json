@@ -1,0 +1,69 @@
+{
+  "header": {
+    "countdown": {
+      "days": "Urukuna",
+      "hours": "Pacha",
+      "minutes": "Min",
+      "seconds": "Seg"
+    },
+    "status": {
+      "online": "🌐 Chiqapa",
+      "offline": "📱 Jani chiqapa"
+    },
+    "translate": "Jaqukipaña",
+    "languages": {
+      "spanish": "Kastilla aru",
+      "english": "Inglés aru",
+      "quechua": "Qhichwa aru",
+      "aymara": "Aymara aru"
+    }
+  },
+  "navigation": {
+    "home": "Uta",
+    "candidates": "Ajllirinaka",
+    "calendar": "Phaxsi",
+    "news": "Yatiñanaka",
+    "tutorial": "Yatichäwi"
+  },
+  "home": {
+    "title": "Ajllita Piruw",
+    "subtitle": "Jumax ajllitam markasan jutirin suma",
+    "description": "2026 ajlliñanakaruxa mantañani taqi yatiñanakampi ajllirinakamanta, ajlliñ phaxsimanta, machaq yatiñanakamanta."
+  },
+  "candidates": {
+    "title": "Ajllirinaka 2026",
+    "filterBy": "Ajlliña:",
+    "allPositions": "Taqi irnaqäwinaka",
+    "president": "P'iqinchiri",
+    "congress": "Congreso",
+    "regional": "Suyuni",
+    "municipal": "Markani",
+    "noResults": "Janiw ajllirinakax jikxatasitäti."
+  },
+  "calendar": {
+    "title": "Ajlliñ Phaxsinaka 2026",
+    "filterBy": "Ajlliña:",
+    "allPhases": "Taqi t'aqanaka",
+    "registration": "Qillqantaña",
+    "campaign": "Campaña",
+    "voting": "Ajlliña",
+    "results": "Lurawinaka"
+  },
+  "news": {
+    "title": "Ajlliñ Yatiñanaka",
+    "readMore": "Juk'amp uñjaña",
+    "source": "Uñstäwi"
+  },
+  "tutorial": {
+    "title": "Kunjams ajlliña?",
+    "step": "Thaki",
+    "steps": [
+      "Ajlliñ utam uñakipaña",
+      "DNI chiqap apaniña",
+      "Ajlliñ mesamar saraña",
+      "Ajlliñ laphi katuqaña",
+      "Ajllitam sum qillqantaña",
+      "Ajllitam urpar uñtayaña"
+    ]
+  }
+}
