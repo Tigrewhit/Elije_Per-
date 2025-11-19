@@ -5,34 +5,50 @@ import App from './App'
 import './styles/site.css'
 import './i18n'
 
-// 🎯 SERVICE WORKER NATIVO - APP 100% OFFLINE
+// 🏗️ APP SHELL + ALMACENAMIENTO OFFLINE
 import { registerSW } from 'virtual:pwa-register'
+import { initOfflineData } from './services/offlineStorage'
 
+// 📱 REGISTRO PWA NATIVA
 const updateSW = registerSW({
   onNeedRefresh() {
-    console.log('🔄 Nueva versión de la app nativa disponible')
+    console.log('🔄 Nueva versión de App Shell disponible')
   },
   onOfflineReady() {
-    console.log('🎉 APP NATIVA LISTA - Funciona como WhatsApp offline')
+    console.log('🎉 APP SHELL LISTA - Funciona como WhatsApp')
     
-    // Notificación que la app es completamente offline
-    if ('Notification' in window && Notification.permission === 'granted') {
-      new Notification('¡App instalada! Ya funciona sin internet', {
-        body: 'Navega entre páginas sin conexión como una app nativa',
-        icon: '/assets/logos/logo_elije_peru.jpg',
-        badge: '/assets/logos/logo_elije_peru.jpg'
-      })
-    }
-    
-    // Log para debug
-    console.log('✅ ENRUTAMIENTO LOCAL ACTIVADO - No necesita servidor')
+    // Inicializar datos offline cuando la app esté lista
+    initOfflineData().then(success => {
+      if (success) {
+        console.log('📦 DATOS OFFLINE CARGADOS - App 100% autónoma');
+        
+        // Notificación de app nativa lista
+        if ('Notification' in window && Notification.permission === 'granted') {
+          new Notification('🗳️ Elige Perú - App Nativa Instalada', {
+            body: 'Funciona completamente sin internet. Navega libremente!',
+            icon: '/assets/logos/logo_elije_peru.jpg',
+            badge: '/assets/logos/logo_elije_peru.jpg',
+            tag: 'app-ready'
+          })
+        }
+      }
+    });
   },
   immediate: true
 })
 
-// Pedir permisos de notificación
+// 🔔 PERMISOS DE NOTIFICACIÓN (para feedback de instalación)
 if ('Notification' in window && Notification.permission === 'default') {
-  Notification.requestPermission()
+  Notification.requestPermission().then(permission => {
+    console.log('Permisos de notificación:', permission);
+  });
+}
+
+// 🧪 DEBUG: Verificar que es PWA real
+if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) {
+  console.log('✅ EJECUTANDOSE COMO PWA NATIVA - No es acceso directo');
+} else {
+  console.log('⚠️ Ejecutándose en navegador - Instalar como PWA para mejor experiencia');
 }
 
 createRoot(document.getElementById('root')).render(

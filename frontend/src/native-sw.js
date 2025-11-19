@@ -1,135 +1,182 @@
 import { precacheAndRoute, cleanupOutdatedCaches } from 'workbox-precaching';
 
-// 🎯 SERVICE WORKER TIPO APP NATIVA - ENRUTAMIENTO 100% LOCAL
+// 🏗️ APP SHELL ARCHITECTURE - COMO WHATSAPP/INSTAGRAM
+// Una sola página + Router local + Cache total = App nativa
 
-// Precargar todos los archivos generados por Vite
+// ⚡ PRECARGA: Todo lo necesario para funcionar offline
 precacheAndRoute(self.__WB_MANIFEST);
 cleanupOutdatedCaches();
 
-// 🔄 CACHE DE TODAS LAS RUTAS SPA - SIN CONSULTAR SERVIDOR
-const CACHE_NAME = 'spa-routes-v1';
-const ROUTES_TO_CACHE = [
-  '/',
-  '/candidatos',
-  '/calendario',
-  '/noticias', 
-  '/tutorial',
-  '/marco-legal'
-];
+// 📦 APP SHELL - Recursos críticos para funcionamiento nativo
+const APP_SHELL_CACHE = 'app-shell-v2';
+const DATA_CACHE = 'electoral-data-v2';
 
-// ⚡ INSTALACIÓN: Precargar TODAS las rutas localmente
+// 🎯 INSTALACIÓN: App Shell completo (como descargar WhatsApp)
 self.addEventListener('install', (event) => {
-  console.log('🚀 Service Worker: Instalando app nativa...');
+  console.log('📥 INSTALANDO APP SHELL - Como WhatsApp...');
   
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => {
-        console.log('📦 Precargando todas las rutas SPA...');
-        // Cachear TODAS las rutas como /index.html para SPA routing
-        return cache.addAll(
-          ROUTES_TO_CACHE.map(route => ({
-            url: route,
-            response: new Response('', {
-              headers: { 'Content-Type': 'text/html' }
-            })
-          }))
-        );
+    Promise.all([
+      // Cache App Shell (estructura de la app)
+      caches.open(APP_SHELL_CACHE).then(cache => {
+        console.log('🏗️ Cacheando App Shell...');
+        return cache.addAll([
+          '/',
+          '/index.html',
+          // Todas las rutas SPA se resuelven con index.html
+          '/candidatos',
+          '/calendario', 
+          '/noticias',
+          '/tutorial',
+          '/marco-legal'
+        ]);
+      }),
+      
+      // Cache datos electorales offline
+      caches.open(DATA_CACHE).then(cache => {
+        console.log('📊 Cacheando datos electorales...');
+        // Los datos ya están en los archivos JS, no necesitamos fetch
+        return Promise.resolve();
       })
+    ])
   );
   
-  // Activar inmediatamente sin esperar
+  // Activar inmediatamente - sin esperar
   self.skipWaiting();
 });
 
-// 🎛️ ACTIVACIÓN: Tomar control total
+// 🔄 ACTIVACIÓN: Tomar control total como app nativa
 self.addEventListener('activate', (event) => {
-  console.log('✅ Service Worker: App nativa activada');
-  event.waitUntil(self.clients.claim());
+  console.log('✅ APP SHELL ACTIVADA - Funcionando como app nativa');
+  
+  event.waitUntil(
+    Promise.all([
+      // Limpiar caches antiguos
+      caches.keys().then(cacheNames => {
+        return Promise.all(
+          cacheNames
+            .filter(cacheName => cacheName.includes('v1'))
+            .map(cacheName => caches.delete(cacheName))
+        );
+      }),
+      // Tomar control inmediato
+      self.clients.claim()
+    ])
+  );
 });
 
-// 🌐 INTERCEPTAR TODAS LAS NAVEGACIONES - FUNCIONA COMO APP NATIVA
+// 🚀 INTERCEPCIÓN TOTAL - Como WhatsApp maneja navegación
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
   
-  // 📱 NAVEGACIÓN: Resolver TODAS las rutas localmente (como WhatsApp)
+  // 🧭 NAVEGACIÓN SPA: TODO se resuelve con APP SHELL
   if (request.mode === 'navigate') {
-    console.log('🧭 Navegación interceptada:', url.pathname);
+    console.log('📱 Navegación APP SHELL:', url.pathname);
     
     event.respondWith(
-      // SIEMPRE responder con index.html para SPA routing
-      caches.match('/index.html')
-        .then((cachedResponse) => {
-          if (cachedResponse) {
-            console.log('✅ Ruta resuelta LOCALMENTE:', url.pathname);
-            return cachedResponse;
+      // App Shell Strategy - SIEMPRE index.html para SPA
+      caches.open(APP_SHELL_CACHE)
+        .then(cache => cache.match('/index.html'))
+        .then(response => {
+          if (response) {
+            console.log('✅ APP SHELL SERVIDO:', url.pathname);
+            return response;
           }
           
-          // Fallback: crear response básico para SPA
-          return new Response(`
-            <!DOCTYPE html>
-            <html>
-              <head>
-                <title>Elige Perú</title>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              </head>
-              <body>
-                <div id="root">Cargando app offline...</div>
-                <script type="module" src="/src/main.jsx"></script>
-              </body>
-            </html>
-          `, {
-            headers: { 'Content-Type': 'text/html' }
+          // Fallback si no hay cache
+          console.log('⚠️ Fallback para:', url.pathname);
+          return caches.match('/').then(fallback => {
+            return fallback || new Response(`
+              <!DOCTYPE html>
+              <html lang="es">
+                <head>
+                  <meta charset="UTF-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>Elige Perú - Offline</title>
+                  <style>
+                    body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+                    .offline { color: #003770; }
+                  </style>
+                </head>
+                <body>
+                  <div id="root">
+                    <div class="offline">
+                      <h1>🗳️ Elige Perú</h1>
+                      <p>App funcionando offline</p>
+                    </div>
+                  </div>
+                  <script type="module" src="/src/main.jsx"></script>
+                </body>
+              </html>
+            `, {
+              status: 200,
+              headers: { 'Content-Type': 'text/html; charset=utf-8' }
+            });
           });
         })
-        .catch(() => {
-          console.log('⚠️ Error en navegación, usando fallback');
-          return new Response('App offline disponible', {
-            status: 200,
-            headers: { 'Content-Type': 'text/html' }
-          });
+        .catch(error => {
+          console.error('❌ Error en App Shell:', error);
+          return new Response('App no disponible', { status: 503 });
         })
     );
     return;
   }
   
-  // 📂 RECURSOS ESTÁTICOS: Cache-first (imágenes, JS, CSS)
-  if (request.destination === 'image' || 
-      request.destination === 'script' || 
+  // 📂 RECURSOS ESTÁTICOS: Cache-first strategy
+  if (request.destination === 'script' || 
       request.destination === 'style' ||
+      request.destination === 'image' ||
       request.destination === 'font') {
     
     event.respondWith(
       caches.match(request)
-        .then((cachedResponse) => {
-          if (cachedResponse) {
-            return cachedResponse;
+        .then(response => {
+          if (response) {
+            console.log('📦 Recurso desde cache:', request.url);
+            return response;
           }
           
+          // Si no está en cache, intentar descargar
           return fetch(request)
-            .then((response) => {
-              // Cache la response si es exitosa
-              if (response.status === 200) {
+            .then(response => {
+              if (response && response.status === 200) {
+                // Cachear para futuras peticiones
                 const responseClone = response.clone();
-                caches.open(CACHE_NAME)
-                  .then((cache) => cache.put(request, responseClone));
+                caches.open(APP_SHELL_CACHE)
+                  .then(cache => cache.put(request, responseClone));
               }
               return response;
             })
             .catch(() => {
-              console.log('📂 Recurso no disponible offline:', request.url);
-              return new Response('Recurso offline', { status: 404 });
+              console.log('❌ Recurso no disponible offline');
+              return new Response('', { status: 404 });
             });
         })
     );
+    return;
   }
+  
+  // 🌐 OTRAS PETICIONES: Intentar red primero, fallback a cache
+  event.respondWith(
+    fetch(request)
+      .catch(() => {
+        // Si falla la red, buscar en cache
+        return caches.match(request)
+          .then(response => response || new Response('Offline', { status: 503 }));
+      })
+  );
 });
 
-// 🔔 NOTIFICACIÓN DE APP LISTA OFFLINE
+// 💬 COMUNICACIÓN CON LA APP
 self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
+  if (event.data?.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
+  
+  if (event.data?.type === 'GET_VERSION') {
+    event.ports[0].postMessage({ version: 'APP_SHELL_V2' });
+  }
 });
 
-console.log('🎉 SERVICE WORKER NATIVO: App funcionará como WhatsApp - 100% offline');
+console.log('🎉 APP SHELL READY - Funciona como WhatsApp offline!');

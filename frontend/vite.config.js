@@ -12,22 +12,41 @@ export default defineConfig({
       filename: 'native-sw.js',
       manifest: {
         name: 'Elige Perú - Elecciones 2026',
-        short_name: 'Elige Perú',
-        description: 'App electoral que funciona 100% offline',
+        short_name: 'ElijePeru',
+        description: 'App electoral offline - Como WhatsApp pero para votar',
         theme_color: '#003770',
-        background_color: '#ffffff',
+        background_color: '#003770',
         display: 'standalone',
         start_url: '/',
+        scope: '/',
+        orientation: 'portrait',
         icons: [
           {
-            src: 'assets/logos/logo_elije_peru.jpg',
+            src: '/assets/logos/logo_elije_peru.jpg',
             sizes: '192x192',
-            type: 'image/jpeg'
+            type: 'image/jpeg',
+            purpose: 'any maskable'
           },
           {
-            src: 'assets/logos/logo_elije_peru.jpg',
+            src: '/assets/logos/logo_elije_peru.jpg',
             sizes: '512x512', 
-            type: 'image/jpeg'
+            type: 'image/jpeg',
+            purpose: 'any maskable'
+          }
+        ],
+        categories: ['government', 'news', 'education'],
+        shortcuts: [
+          {
+            name: 'Ver Candidatos',
+            short_name: 'Candidatos',
+            url: '/candidatos',
+            icons: [{ src: '/assets/logos/logo_elije_peru.jpg', sizes: '192x192' }]
+          },
+          {
+            name: 'Calendario Electoral',
+            short_name: 'Calendario',
+            url: '/calendario',
+            icons: [{ src: '/assets/logos/logo_elije_peru.jpg', sizes: '192x192' }]
           }
         ]
       }
