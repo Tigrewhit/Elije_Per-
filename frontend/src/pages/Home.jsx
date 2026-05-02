@@ -22,7 +22,7 @@ export default function Home(){
 					<a href='/calendar' className="mobile-card mobile-btn touch-optimized" style={{background:'#fff',textDecoration:'none',color:'#2d3748',display:'flex',flexDirection:'column',alignItems:'center',padding:'24px',minHeight:'120px',justifyContent:'center'}}>
 						<div style={{fontSize:'2rem',marginBottom:'8px'}}>📅</div>
 						<div className="mobile-subtitle" style={{fontWeight:700,marginBottom:'4px',textAlign:'center'}}>Calendario</div>
-						<div className="mobile-text" style={{textAlign:'center',fontSize:'0.85rem'}}>Fechas electorales</div>
+						<div className="mobile-text" style={{textAlign:'center',fontSize:'10px'}}>Fechas de las elecciones</div>
 					</a>
 					<a href='/news' className="mobile-card mobile-btn touch-optimized" style={{background:'#fff',textDecoration:'none',color:'#2d3748',display:'flex',flexDirection:'column',alignItems:'center',padding:'24px',minHeight:'120px',justifyContent:'center'}}>
 						<div style={{fontSize:'2rem',marginBottom:'8px'}}>📰</div>
