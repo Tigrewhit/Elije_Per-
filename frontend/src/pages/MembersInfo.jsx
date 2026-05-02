@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function MembersInfo() {
   return (
-    <Fragment>
+    <>
       <main class="max-w-[1280px] mx-auto px-6 py-12 space-y-16">
         <section class="grid sm:grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div class="space-y-6">
@@ -536,6 +536,6 @@ export default function MembersInfo() {
           </div>
         </div>
       </footer>
-    </Fragment>
+    </>
   );
 }
