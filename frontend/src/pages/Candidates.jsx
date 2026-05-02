@@ -88,29 +88,23 @@ export default function Candidates(){
 	)
 
 	return (
-		<div style={{
-			padding: '28px',
-			maxWidth: 1100,
-			margin: '0 auto',
-			borderRadius: '20px',
-			background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)'
-		}}>
+		<div className='px-4 py-8 sm:px-6 sm:py-10 mx-auto max-w-[1100px] rounded-[32px] bg-gradient-to-br from-slate-100 via-slate-50 to-white'>
 				<div className='p-4 sm:p-6 md:p-8'>
 				<OfflineIndicator isOnline={isOnline} isServiceWorkerReady={isServiceWorkerReady} cacheStatus={cacheStatus} />
-					<div className='bg-white shadow-lg border border-gray-200 mb-6 p-4 sm:p-6 md:p-8' style={{borderRadius: '16px'}}>
-						<h3 className='text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4'>Candidatos Presidenciales - Elecciones Generales 2026</h3>
-						<p className='text-gray-600 mb-6 text-sm sm:text-base md:text-lg leading-relaxed'>Lista oficial de candidatos presidenciales inscritos para las Elecciones Generales 2026. Información verificada con fuentes oficiales JNE/ONPE.</p>						<div className='bg-gray-50 border border-gray-200 shadow-sm p-3 sm:p-4 md:p-6' style={{borderRadius: '12px'}}>
-							<div className='flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-4'>
+					<div className='bg-gradient-to-br from-white via-slate-50 to-slate-100 shadow-xl border border-gray-200 mb-6 p-4 sm:p-6 md:p-8 rounded-[28px]'>
+						<h3 className='text-xl sm:text-2xl md:text-3xl font-black text-slate-900 mb-4'>Candidatos Presidenciales - Elecciones Generales 2026</h3>
+						<p className='text-gray-600 mb-6 text-sm sm:text-base md:text-lg leading-relaxed'>Lista oficial de candidatos presidenciales inscritos para las Elecciones Generales 2026. Información verificada con fuentes oficiales JNE/ONPE.</p>						<div className='bg-white border border-gray-200 shadow-sm p-4 sm:p-5 md:p-6 rounded-[28px]'>
+							<div className='flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4'>
 							<div className='flex items-center gap-2'>
-								<label className='text-sm font-medium'>Filtrar:</label>
-							<select className='px-3 py-2 border rounded-lg text-sm bg-white shadow-sm' value={roleFilter} onChange={(e) => setRoleFilter(e.target.value)}>
+								<label className='text-sm font-semibold text-slate-700'>Filtrar:</label>
+							<select className='px-3 py-2 border border-slate-300 rounded-2xl text-sm bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-200 transition' value={roleFilter} onChange={(e) => setRoleFilter(e.target.value)}>
 								<option value="">Todos los candidatos</option>
 								<option value="Presidente">Candidatos Presidenciales</option>
 							</select>
 							</div>
-					<div className='flex items-center gap-2'>
-						<label className='text-sm font-medium'>Partido:</label>
-				<select className='px-2 py-1 border rounded text-sm' value={partyFilter} onChange={(e) => setPartyFilter(e.target.value)}>
+					<div className='flex flex-col sm:flex-row items-center gap-3 sm:gap-2'>
+						<label className='text-sm font-semibold text-slate-700'>Partido:</label>
+				<select className='px-3 py-2 border border-slate-300 rounded-2xl text-sm bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-200 transition' value={partyFilter} onChange={(e) => setPartyFilter(e.target.value)}>
 					<option value="">Todos los partidos</option>
 					<option value="Fuerza Popular">Fuerza Popular</option>
 					<option value="Renovación Popular">Renovación Popular</option>
@@ -125,13 +119,13 @@ export default function Candidates(){
 					<option value="Ahora Nación">Ahora Nación</option>
 				</select>
 					</div>
-								<div className='flex flex-col sm:flex-row items-start sm:items-center w-full sm:w-auto' style={{gap: '16px sm:32px', marginTop: '12px sm:0px'}}>
+								<div className='flex flex-col sm:flex-row items-start sm:items-center w-full sm:w-auto gap-3 sm:gap-4 mt-3 sm:mt-0'>
 								<a href='https://portal.jne.gob.pe/portal' target='_blank' rel='noopener noreferrer' 
-								   className='bg-green-600 text-black text-sm hover:bg-green-700 transition-all duration-200 font-semibold shadow-md' style={{padding: '8px 20px', borderRadius: '6px'}}>
+								   className='px-4 py-2 bg-green-600 text-black text-sm hover:bg-green-700 transition-all duration-200 font-semibold shadow-md rounded-2xl text-center'>
 									JNE Oficial
 								</a>
 								<a href='https://infogob.jne.gob.pe/' target='_blank' rel='noopener noreferrer' 
-								   className='bg-blue-600 text-white text-sm hover:bg-blue-700 transition-all duration-200 font-semibold shadow-md' style={{padding: '8px 20px', borderRadius: '6px'}}>
+								   className='px-4 py-2 bg-blue-600 text-white text-sm hover:bg-blue-700 transition-all duration-200 font-semibold shadow-md rounded-2xl text-center'>
 									InfoGob JNE
 								</a>
 							</div>
@@ -146,12 +140,12 @@ export default function Candidates(){
 				const matchesParty = !partyFilter || c.party === partyFilter
 				return matchesRole && matchesParty
 			}).map(c=>(
-					<div key={c.id} className="bg-white border border-gray-200 hover:shadow-lg transition-all duration-200 shadow-md p-4 sm:p-6 md:p-8 mb-6 sm:mb-6 md:mb-8" style={{borderRadius: '16px'}}>
+					<div key={c.id} className="bg-white border border-gray-200 hover:shadow-2xl transition-all duration-300 shadow-md p-4 sm:p-6 md:p-8 mb-6 sm:mb-6 md:mb-8 rounded-[24px]">
 						<div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 p-2 sm:p-3 md:p-4">
 							<img 
 								src={c.photo_url || '/icon-192.png'} 
 								alt={c.name} 
-								className='rounded-lg object-cover border border-gray-300' 
+								className='h-14 w-14 min-w-[56px] rounded-2xl object-cover border border-slate-300 mr-3' 
 								style={{
 											width: '50px',
 											height: '50px',
