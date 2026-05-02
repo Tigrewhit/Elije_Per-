@@ -172,7 +172,7 @@ export default function Candidates(){
 											openModal(c, 'cv')
 										}}
 									   className='px-3 sm:px-4 md:px-5 py-2 sm:py-3 md:py-3 bg-blue-500 text-black hover:bg-blue-600 transition-colors font-semibold rounded-xl sm:rounded-2xl w-full sm:w-auto text-center'>
-										📄 Hoja de Vida
+										📄 Hoja de Vida del candidato presidencial
 									</button>
 									<button 
 										onClick={(e) => {
