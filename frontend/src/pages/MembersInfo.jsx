@@ -1,273 +1,541 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function MembersInfo() {
   return (
-    <div className="px-3 sm:px-4 md:px-6 lg:px-8" style={{
-			padding: '12px',
-			maxWidth: 1200,
-			margin: '0 auto',
-			borderRadius: '20px',
-			background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)'
-		}}>
-			<div className="p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10">
-				<div className='bg-white shadow-xl border border-gray-200 p-4 sm:p-5 md:p-6 lg:p-8 xl:p-10' style={{borderRadius: '18px', boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1)'}}>
-					<div className='mb-6'>
-						<h1 className='text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 lg:mb-6'>🇵🇪 Guía Completa para Miembros de Mesa: Elecciones 2026</h1>
-						<p className='text-gray-600 mb-4 sm:mb-5 md:mb-6 lg:mb-8 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed px-1 sm:px-2'>Información oficial y recursos esenciales para su servicio cívico. Información verificada con fuentes oficiales JNE/ONPE.</p>
-					</div>
-
-      {/* Derechos y Beneficios */}
-      <section className='bg-blue-50 border border-blue-200 p-3 sm:p-4 md:p-5 lg:p-6 xl:p-8 mb-4 sm:mb-5 md:mb-6 lg:mb-8' style={{borderRadius: '16px', marginTop: '24px sm:32px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'}}>
-        <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-blue-800 px-1 sm:px-2">1. ⚖️ Derechos y Beneficios del Miembro de Mesa</h2>
-                <div className="overflow-x-auto mobile-scroll" style={{borderRadius: '12px', margin: '0 -10px', padding: '0 10px'}}>
-          <div className="inline-block min-w-full align-middle">
-            <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
-              <table className='w-full bg-white border border-gray-200' style={{fontSize: '7px', tableLayout: 'fixed', width: '100%', maxWidth: '100%'}}>
-                <thead className="bg-gray-50">
-                  <tr>
-                    <th className="text-left font-semibold text-gray-800 border-b" style={{fontSize: '7px', width: '25%', padding: '4px 2px', wordWrap: 'break-word', overflow: 'hidden'}}>Beneficio</th>
-                    <th className="text-left font-semibold text-gray-800 border-b" style={{fontSize: '7px', width: '45%', padding: '4px 2px', wordWrap: 'break-word', overflow: 'hidden'}}>Detalle</th>
-                    <th className="text-left font-semibold text-gray-800 border-b" style={{fontSize: '7px', width: '30%', padding: '4px 2px', wordWrap: 'break-word', overflow: 'hidden'}}>Obligación</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b">
-                    <td className="font-medium text-blue-800" style={{fontSize: '7px', padding: '4px 2px', wordWrap: 'break-word', overflow: 'hidden', lineHeight: '1.1'}}>Compensación Económica</td>
-                    <td className="text-gray-700" style={{fontSize: '7px', padding: '4px 2px', wordWrap: 'break-word', overflow: 'hidden', lineHeight: '1.1'}}>S/ 120.00 (ref. 2021). 2026 por confirmar.</td>
-                    <td className="text-gray-700" style={{fontSize: '7px', padding: '4px 2px', wordWrap: 'break-word', overflow: 'hidden', lineHeight: '1.1'}}>Jornada 6:30 AM hasta ODPE</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="font-medium text-blue-800" style={{fontSize: '7px', padding: '4px 2px', wordWrap: 'break-word', overflow: 'hidden', lineHeight: '1.1'}}>Justificación Laboral</td>
-                    <td className="text-gray-700" style={{fontSize: '7px', padding: '4px 2px', wordWrap: 'break-word', overflow: 'hidden', lineHeight: '1.1'}}>Justifica inasistencia legal trabajo/estudios</td>
-                    <td className="text-gray-700" style={{fontSize: '7px', padding: '4px 2px', wordWrap: 'break-word', overflow: 'hidden', lineHeight: '1.1'}}>Certificado ONPE a empleador</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="font-medium text-blue-800" style={{fontSize: '7px', padding: '4px 2px', wordWrap: 'break-word', overflow: 'hidden', lineHeight: '1.1'}}>Capacitación</td>
-                    <td className="text-gray-700" style={{fontSize: '7px', padding: '4px 2px', wordWrap: 'break-word', overflow: 'hidden', lineHeight: '1.1'}}>Manuales, videos Voto Digital</td>
-                    <td className="text-gray-700" style={{fontSize: '7px', padding: '4px 2px', wordWrap: 'break-word', overflow: 'hidden', lineHeight: '1.1'}}>Asistir capacitaciones ONPE</td>
-                  </tr>
-                  <tr>
-                    <td className="font-medium text-blue-800" style={{fontSize: '7px', padding: '4px 2px', wordWrap: 'break-word', overflow: 'hidden', lineHeight: '1.1'}}>Refrigerio</td>
-                    <td className="text-gray-700" style={{fontSize: '7px', padding: '4px 2px', wordWrap: 'break-word', overflow: 'hidden', lineHeight: '1.1'}}>Alimentos + apoyo PNP y FF.AA.</td>
-                    <td className="text-gray-700" style={{fontSize: '7px', padding: '4px 2px', wordWrap: 'break-word', overflow: 'hidden', lineHeight: '1.1'}}>Mantener protocolos</td>
-                  </tr>
-                </tbody>
-              </table>
+    <>
+      <main class="max-w-[1280px] mx-auto px-6 py-12 space-y-16">
+        <section class="grid sm:grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high text-[#003770] border border-blue-100">
+              <span
+                class="material-symbols-outlined text-[18px]"
+                data-icon="verified"
+              >
+                verified
+              </span>
+              <span class="font-label-caps text-label-caps">
+                GUÍA OFICIAL 2026
+              </span>
+            </div>
+            <h1 class="font-h1 text-h1 text-primary tracking-tight">
+              Manual para Miembros de Mesa
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+              Has sido seleccionado para garantizar la transparencia de la
+              voluntad popular. En esta guía encontrarás todo lo necesario para
+              cumplir tu labor este 12 de Abril.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-4">
+              <button class="bg-[#003770] text-white px-8 py-3.5 rounded-lg font-semibold hover:opacity-90 active:scale-95 transition-all flex items-center gap-2 shadow-lg shadow-blue-900/10">
+                <span class="material-symbols-outlined" data-icon="download">
+                  download
+                </span>
+                Descargar Manual PDF
+              </button>
+              <button class="bg-white border-2 border-[#003770] text-[#003770] px-8 py-3.5 rounded-lg font-semibold hover:bg-blue-50 active:scale-95 transition-all">
+                Ver Video Tutorial
+              </button>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-yellow-50 border border-yellow-200 p-4 sm:p-6 md:p-8 mb-6 sm:mb-8" style={{borderRadius: '16px'}}>
-        <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-green-800 px-1 sm:px-2">2. 📅 Cronograma y Deberes Clave (2026)</h2>
-        
-        <div className="overflow-x-auto">
-          <table className="w-full bg-white rounded-lg border border-gray-200">
-            <thead className="bg-gray-50">
-              <tr>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold text-gray-800 border-b text-xs sm:text-sm">Actividad</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold text-gray-800 border-b text-xs sm:text-sm">Detalle y Objetivo</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-left font-semibold text-gray-800 border-b text-xs sm:text-sm">Fecha Tentativa</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b">
-                <td className="px-2 sm:px-4 py-2 sm:py-3 font-medium text-green-800 text-xs sm:text-sm">Sorteo de Miembros de Mesa</td>
-                <td className="px-2 sm:px-4 py-2 sm:py-3 text-gray-700 text-xs sm:text-sm">Anuncio oficial de los ciudadanos seleccionados (titulares y suplentes).</td>
-                <td className="px-2 sm:px-4 py-2 sm:py-3 text-green-700 font-medium text-xs sm:text-sm">29 de enero de 2026</td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-2 sm:px-4 py-2 sm:py-3 font-medium text-green-800 text-xs sm:text-sm">Capacitación Obligatoria</td>
-                <td className="px-2 sm:px-4 py-2 sm:py-3 text-gray-700 text-xs sm:text-sm">Instrucción presencial sobre la instalación de mesa y el proceso de sufragio.</td>
-                <td className="px-2 sm:px-4 py-2 sm:py-3 text-gray-600 text-xs sm:text-sm">Enero / Febrero</td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-2 sm:px-4 py-2 sm:py-3 font-medium text-green-800 text-xs sm:text-sm">Capacitación Voto Digital</td>
-                <td className="px-2 sm:px-4 py-2 sm:py-3 text-gray-700 text-xs sm:text-sm">Entrenamiento en los procedimientos de voto electrónico y escrutinio (clave para 2026).</td>
-                <td className="px-2 sm:px-4 py-2 sm:py-3 text-gray-600 text-xs sm:text-sm">Febrero / Marzo</td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-2 sm:px-4 py-2 sm:py-3 font-medium text-green-800 text-xs sm:text-sm">Simulacro General</td>
-                <td className="px-2 sm:px-4 py-2 sm:py-3 text-gray-700 text-xs sm:text-sm">Ensayo práctico del proceso electoral completo.</td>
-                <td className="px-2 sm:px-4 py-2 sm:py-3 text-gray-600 text-xs sm:text-sm">Marzo</td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-2 sm:px-4 py-2 sm:py-3 font-medium text-green-800 text-xs sm:text-sm">Entrega de Material</td>
-                <td className="px-2 sm:px-4 py-2 sm:py-3 text-gray-700 text-xs sm:text-sm">Recojo de paquetes electorales en la ODPE y última orientación.</td>
-                <td className="px-2 sm:px-4 py-2 sm:py-3 text-green-700 font-medium text-xs sm:text-sm">11 de abril</td>
-              </tr>
-              <tr className="bg-green-100">
-                <td className="px-2 sm:px-4 py-2 sm:py-3 font-bold text-green-900 text-xs sm:text-sm">DÍA DE LAS ELECCIONES</td>
-                <td className="px-2 sm:px-4 py-2 sm:py-3 font-medium text-green-900 text-xs sm:text-sm">Jornada de Servicio Cívico: Llegada: 6:30 AM. Cierre de Votación: 5:00 PM.</td>
-                <td className="px-2 sm:px-4 py-2 sm:py-3 font-bold text-green-900 text-xs sm:text-sm">12 de abril de 2026</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        
-        <div className="mt-4 text-center">
-          <Link to="/calendar" className="text-green-600 hover:underline font-medium text-sm sm:text-base">
-            📅 Ver calendario electoral completo →
-          </Link>
-        </div>
-      </section>
-
-      {/* Pasos del Servicio */}
-      <section className="bg-yellow-50 border border-yellow-200 p-3 sm:p-4 md:p-5 lg:p-6 xl:p-8 mb-4 sm:mb-5 md:mb-6 lg:mb-8" style={{borderRadius: '16px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'}}>
-        <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-yellow-800 px-1 sm:px-2">3. ✅ Pasos del Servicio: Flujo de la Jornada Electoral</h2>
-        <p className="text-gray-700 mb-6 text-sm sm:text-base">Esta es su guía rápida para el día de la elección.</p>
-        
-        <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-          <div className="bg-white p-2 sm:p-3 md:p-4 lg:p-5 border border-yellow-200" style={{borderRadius: '12px'}}>
-            <h3 className="font-semibold text-blue-800 mb-2 sm:mb-3 text-xs sm:text-sm md:text-base">I. Instalación de Mesa (6:30 AM - 7:00 AM)</h3>
-            <ul className="space-y-2 text-xs sm:text-sm text-gray-700">
-              <li>• Llegar puntualmente a las 6:30 AM con su DNI y Credencial.</li>
-              <li>• Verificar que el material electoral esté completo (ánfora, cabina, sellos, etc.).</li>
-              <li>• Comprobar que el ánfora esté vacía y sellarla correctamente.</li>
-              <li>• Llenar y firmar el Acta de Instalación.</li>
-            </ul>
-          </div>
-          
-          <div className="bg-white p-2 sm:p-3 md:p-4 lg:p-5 border border-yellow-200" style={{borderRadius: '12px'}}>
-            <h3 className="font-semibold text-green-800 mb-2 sm:mb-3 text-xs sm:text-sm md:text-base">II. Durante el Sufragio (7:00 AM - 5:00 PM)</h3>
-            <ul className="space-y-2 text-xs sm:text-sm text-gray-700">
-              <li>• Verificar la identidad del elector (DNI y padrón) y confirmar que le corresponde votar en su mesa.</li>
-              <li>• Entregar la cédula de sufragio firmada.</li>
-              <li>• Asegurar la secrecía y el orden.</li>
-              <li>• Recibir la cédula doblada y depositarla en el ánfora.</li>
-              <li>• Marcar la participación y colocar el holograma en el DNI del elector.</li>
-            </ul>
-          </div>
-          
-          <div className="bg-white p-2 sm:p-3 md:p-4 lg:p-5 border border-yellow-200" style={{borderRadius: '12px'}}>
-            <h3 className="font-semibold text-red-800 mb-2 sm:mb-3 text-xs sm:text-sm md:text-base">III. Cierre y Escrutinio (5:00 PM en adelante)</h3>
-            <ul className="space-y-2 text-xs sm:text-sm text-gray-700">
-              <li>• Declarar el cierre de la votación puntualmente a las 5:00 PM.</li>
-              <li>• Proceder al conteo de votos (escrutinio) en presencia de personeros.</li>
-              <li>• Llenar con absoluta claridad y sin errores las Actas de Escrutinio.</li>
-              <li>• Entregar copias a personeros y autoridades.</li>
-              <li>• Entregar el paquete electoral final a la ODPE (Oficina Descentralizada de Procesos Electorales).</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Materiales de Referencia */}
-      <section className="bg-purple-50 border border-purple-200 p-3 sm:p-4 md:p-5 lg:p-6 xl:p-8 mb-4 sm:mb-5 md:mb-6 lg:mb-8" style={{borderRadius: '16px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'}}>
-        <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-purple-800 px-1 sm:px-2">4. 📚 Materiales de Referencia y Soporte</h2>
-        
-        <div className="overflow-x-auto -mx-3 sm:-mx-4 md:-mx-5 lg:-mx-6 xl:-mx-8" style={{borderRadius: '12px'}}>
-          <div className="inline-block min-w-full align-middle">
-            <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
-              <table className='min-w-full bg-white border border-gray-200' style={{fontSize: '11px'}}>
-                <thead className="bg-gray-50">
-                  <tr>
-                    <th className="px-1 py-1 text-left font-semibold text-gray-800 border-b" style={{fontSize: '10px', width: '70px'}}>Tipo</th>
-                    <th className="px-1 py-1 text-left font-semibold text-gray-800 border-b" style={{fontSize: '10px', width: '130px'}}>Descripción</th>
-                    <th className="px-1 py-1 text-left font-semibold text-gray-800 border-b" style={{fontSize: '10px', width: '100px'}}>Enlace</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b">
-                    <td className="px-1 py-1 font-medium text-purple-800" style={{fontSize: '10px'}}>Manual Oficial</td>
-                    <td className="px-1 py-1 text-gray-700" style={{fontSize: '10px'}}>Guía completa de procedimientos y llenado de actas.</td>
-                    <td className="px-1 py-1">
-                      <a href="/documentos/pdfs/guia-del-elector-2026.pdf" download className="text-blue-600 hover:underline" style={{fontSize: '9px'}}>
-                        📥 Descargar PDF
-                      </a>
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-1 py-1 font-medium text-purple-800" style={{fontSize: '10px'}}>Guía Voto Digital</td>
-                    <td className="px-1 py-1 text-gray-700" style={{fontSize: '10px'}}>Instrucciones específicas para el manejo del sistema de votación electrónica (si aplica a su local).</td>
-                    <td className="px-1 py-1">
-                      <a href="/documentos/pdfs/voto-digital-2026.pdf" download className="text-blue-600 hover:underline" style={{fontSize: '9px'}}>
-                        📥 Descargar PDF
-                      </a>
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-1 py-1 font-medium text-purple-800" style={{fontSize: '10px'}}>Soporte Telefónico</td>
-                    <td className="px-1 py-1 text-gray-700" style={{fontSize: '10px'}}>Línea de atención exclusiva para consultas y emergencias el día de la elección.</td>
-                    <td className="px-1 py-1 text-gray-700" style={{fontSize: '9px'}}>📞 0800-MESA (0800-6372)</td>
-                  </tr>
-                  <tr>
-                    <td className="px-1 py-1 font-medium text-purple-800" style={{fontSize: '10px'}}>Policía Nacional</td>
-                    <td className="px-1 py-1 text-gray-700" style={{fontSize: '10px'}}>Para situaciones de orden público y seguridad.</td>
-                    <td className="px-1 py-1 text-gray-700" style={{fontSize: '9px'}}>📞 105</td>
-                  </tr>
-                </tbody>
-              </table>
+          <div class="relative">
+            <div class="aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-200">
+              <img
+                alt="Electoral Staff Training"
+                class="w-full h-full object-cover"
+                data-alt="A bright and professional scene showing three diverse individuals in clean corporate vests collaborating in a modern training room. Large informational posters with the Peruvian flag colors are visible in the background. The lighting is bright and airy, creating a sense of clarity and institutional transparency. The focus is on a focused participant reviewing an official manual."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9CI4QTYfqTOmyqbjX0BizDQvT8frqiWrKug6thkw8AZdyfnauNjHMcR4rXe8Rdoie1_nA1SE0xDEy_P0T3NoxPnA6lbczgXLFEjsp6oZU5bIm_OKlD9Fo07DZMxaQoTHaVXvCSL4CeHTKYKI2FILI_gh_-Ce7HE24yi2ZrHojM9Ijl8ynkt3AT2MVrBKIlYJ6a_TEvlqbs6-Xm4SLmCk7wnpJTUly2iGYBH83Rt5MxMfxccYfbPGDYNlOPs_pIWSrt639bYqz9VI"
+              />
+            </div>
+            <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border border-slate-100 max-w-xs">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-secondary-container/20 text-secondary rounded-full flex items-center justify-center">
+                  <span
+                    class="material-symbols-outlined"
+                    data-icon="payments"
+                    // style="font-variation-settings: &quot;FILL&quot; 1"
+                  >
+                    payments
+                  </span>
+                </div>
+                <div>
+                  <p class="font-label-caps text-label-caps text-secondary uppercase">
+                    Compensación
+                  </p>
+                  <p class="font-h3 text-h3 text-on-surface">S/ 120.00</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-green-50 border border-green-200 p-4 sm:p-6 md:p-8 mb-6 sm:mb-8" style={{borderRadius: '16px'}}>
-        <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-green-800 px-1 sm:px-2">5. 🗺️ ¡Pronto Podrás Elegir Dónde Votar!</h2>
-        <p className="text-sm sm:text-base text-gray-700 mb-4">La Oficina Nacional de Procesos Electorales (ONPE) está por habilitar la herramienta más importante para los ciudadanos: "Elige Tu Local de Votación" (ETLV).</p>
-        
-        <div className="overflow-x-auto -mx-3 sm:-mx-4 md:-mx-5 lg:-mx-6 xl:-mx-8" style={{borderRadius: '12px'}}>
-          <div className="inline-block min-w-full align-middle">
-            <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
-              <table className='min-w-full bg-white border border-gray-200' style={{fontSize: '11px'}}>
-                <thead className="bg-gray-50">
+        </section>
+        <section class="space-y-8">
+          <div class="border-l-4 border-secondary pl-6">
+            <h2 class="font-h2 text-h2 text-primary">
+              Cronograma de la Jornada
+            </h2>
+            <p class="text-on-surface-variant font-body-md">
+              Sigue estos pasos críticos el día de la elección.
+            </p>
+          </div>
+          <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="relative step-node flex flex-col items-center text-center p-6 bg-white rounded-2xl border border-slate-100 shadow-sm">
+              <div class="w-14 h-14 bg-[#003770] text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">
+                01
+              </div>
+              <h3 class="font-h3 text-h3 text-primary mb-2">Instalación</h3>
+              <p class="font-label-caps text-label-caps text-slate-500 mb-4">
+                06:00 AM - 07:00 AM
+              </p>
+              <p class="text-on-surface-variant">
+                Llegada al local, recepción de materiales y firma de actas de
+                instalación.
+              </p>
+            </div>
+            <div class="relative step-node flex flex-col items-center text-center p-6 bg-white rounded-2xl border border-slate-100 shadow-sm">
+              <div class="w-14 h-14 bg-[#003770] text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">
+                02
+              </div>
+              <h3 class="font-h3 text-h3 text-primary mb-2">Sufragio</h3>
+              <p class="font-label-caps text-label-caps text-slate-500 mb-4">
+                07:00 AM - 07:00 PM
+              </p>
+              <p class="text-on-surface-variant">
+                Identificación de electores, entrega de cédulas y control de la
+                cámara secreta.
+              </p>
+            </div>
+            <div class="relative step-node flex flex-col items-center text-center p-6 bg-white rounded-2xl border border-slate-100 shadow-sm">
+              <div class="w-14 h-14 bg-secondary text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">
+                03
+              </div>
+              <h3 class="font-h3 text-h3 text-primary mb-2">Escrutinio</h3>
+              <p class="font-label-caps text-label-caps text-slate-500 mb-4">
+                07:00 PM en adelante
+              </p>
+              <p class="text-on-surface-variant">
+                Conteo de votos, llenado de actas y entrega de resultados a la
+                ONPE.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="grid sm:grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 space-y-6">
+            <h3 class="font-h2 text-h2 text-primary">Derechos y Beneficios</h3>
+            <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <table class="w-full border-collapse">
+                <thead class="bg-slate-50 border-b border-slate-200">
                   <tr>
-                    <th className="px-1 py-1 text-left font-semibold text-gray-800 border-b" style={{fontSize: '10px', width: '80px'}}>Herramienta</th>
-                    <th className="px-1 py-1 text-left font-semibold text-gray-800 border-b" style={{fontSize: '10px', width: '120px'}}>Acción del Elector</th>
-                    <th className="px-1 py-1 text-left font-semibold text-gray-800 border-b" style={{fontSize: '10px', width: '120px'}}>Estado Actual (Nov 2025)</th>
+                    <th class="text-left px-6 py-4 font-label-caps text-label-caps text-slate-600">
+                      BENEFICIO
+                    </th>
+                    <th class="text-left px-6 py-4 font-label-caps text-label-caps text-slate-600">
+                      DETALLE
+                    </th>
+                    <th class="text-center px-6 py-4 font-label-caps text-label-caps text-slate-600">
+                      ESTADO
+                    </th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr className="border-b">
-                    <td className="px-1 py-1 font-medium text-green-800" style={{fontSize: '10px'}}>Elige Tu Local de Votación (ETLV)</td>
-                    <td className="px-1 py-1 text-gray-700" style={{fontSize: '10px'}}>Utiliza un mapa interactivo para seleccionar hasta 3 locales cercanos a tu domicilio o trabajo.</td>
-                    <td className="px-1 py-1" style={{fontSize: '9px'}}>
-                      <div className="bg-yellow-100 border border-yellow-300 px-1 py-0.5" style={{borderRadius: '4px'}}>
-                        <span className="text-yellow-800 font-medium">🚀 Lanzamiento Inminente:</span>
-                        <span className="text-yellow-700"> Se proyecta su activación a finales de noviembre de 2025.</span>
-                      </div>
+                <tbody class="divide-y divide-slate-100">
+                  <tr class="hover:bg-slate-50 transition-colors">
+                    <td class="px-6 py-5 font-semibold text-primary">
+                      Compensación Económica
+                    </td>
+                    <td class="px-6 py-5 text-on-surface-variant">
+                      Pago de S/ 120 por jornada efectiva de trabajo.
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                      <span class="inline-block px-3 py-1 rounded-full bg-green-50 text-green-700 text-xs font-bold border border-green-100">
+                        Confirmado
+                      </span>
                     </td>
                   </tr>
-                  <tr>
-                    <td className="px-1 py-1 font-medium text-green-800" style={{fontSize: '10px'}}>Consulta tu Local Final</td>
-                    <td className="px-1 py-1 text-gray-700" style={{fontSize: '10px'}}>Herramienta para confirmar tu local de votación, dirección y número de mesa asignada por la ONPE.</td>
-                    <td className="px-1 py-1" style={{fontSize: '9px'}}>
-                      <div className="bg-blue-100 border border-blue-300 px-1 py-0.5" style={{borderRadius: '4px'}}>
-                        <span className="text-blue-800 font-medium">📅 Próximamente:</span>
-                        <span className="text-blue-700"> Disponible después de que concluya el plazo del ETLV.</span>
-                      </div>
+                  <tr class="hover:bg-slate-50 transition-colors">
+                    <td class="px-6 py-5 font-semibold text-primary">
+                      Día No Laborable
+                    </td>
+                    <td class="px-6 py-5 text-on-surface-variant">
+                      Lunes 13 de abril será feriado no laborable compensable.
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                      <span class="inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold border border-blue-100">
+                        Ley Vigente
+                      </span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-slate-50 transition-colors">
+                    <td class="px-6 py-5 font-semibold text-primary">
+                      Multa por Omisión
+                    </td>
+                    <td class="px-6 py-5 text-on-surface-variant">
+                      Exoneración de multa por no votar si cumples tu labor.
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                      <span class="inline-block px-3 py-1 rounded-full bg-green-50 text-green-700 text-xs font-bold border border-green-100">
+                        Automático
+                      </span>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
+            <div class="mt-12 space-y-4">
+              <h3 class="font-h3 text-h3 text-primary">Procesos Críticos</h3>
+              <div class="space-y-4">
+                <details
+                  class="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm"
+                  open=""
+                >
+                  <summary class="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-slate-50 transition-colors">
+                    <div class="flex items-center gap-4">
+                      <span
+                        class="material-symbols-outlined text-primary"
+                        data-icon="fact_check"
+                      >
+                        fact_check
+                      </span>
+                      <span class="font-h3 text-[18px] text-primary">
+                        Checklist de Instalación de Mesa
+                      </span>
+                    </div>
+                    <span
+                      class="material-symbols-outlined group-open:rotate-180 transition-transform"
+                      data-icon="expand_more"
+                    >
+                      expand_more
+                    </span>
+                  </summary>
+                  <div class="px-6 pb-6 pt-2 space-y-3">
+                    <label class="flex items-start gap-4 p-4 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container hover:shadow-inner transition-all border border-blue-50">
+                      <input
+                        class="mt-1 rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
+                        type="checkbox"
+                      />
+                      <span class="text-on-surface-variant">
+                        Verificar la integridad del ánfora y las cajas de
+                        material electoral.
+                      </span>
+                    </label>
+                    <label class="flex items-start gap-4 p-4 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container hover:shadow-inner transition-all border border-blue-50">
+                      <input
+                        class="mt-1 rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
+                        type="checkbox"
+                      />
+                      <span class="text-on-surface-variant">
+                        Contar las cédulas de sufragio recibidas (no deben
+                        faltar ni sobrar).
+                      </span>
+                    </label>
+                    <label class="flex items-start gap-4 p-4 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container hover:shadow-inner transition-all border border-blue-50">
+                      <input
+                        class="mt-1 rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
+                        type="checkbox"
+                      />
+                      <span class="text-on-surface-variant">
+                        Firmar el Acta de Instalación (Los 3 miembros
+                        obligatoriamente).
+                      </span>
+                    </label>
+                  </div>
+                </details>
+                <details class="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-slate-50 transition-colors">
+                    <div class="flex items-center gap-4">
+                      <span
+                        class="material-symbols-outlined text-primary"
+                        data-icon="policy"
+                      >
+                        policy
+                      </span>
+                      <span class="font-h3 text-[18px] text-primary">
+                        Protocolo de Incidencias
+                      </span>
+                    </div>
+                    <span
+                      class="material-symbols-outlined group-open:rotate-180 transition-transform"
+                      data-icon="expand_more"
+                    >
+                      expand_more
+                    </span>
+                  </summary>
+                  <div class="px-6 pb-6 pt-2 text-on-surface-variant">
+                    <p>
+                      En caso de propaganda política dentro del aula, alteración
+                      del orden o suplantación de identidad, debe comunicarse de
+                      inmediato con el coordinador de la ONPE y el fiscalizador
+                      del JNE presentes en el local.
+                    </p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+          <aside class="space-y-6">
+            <div class="bg-primary text-white p-8 rounded-2xl shadow-xl shadow-blue-900/10">
+              <h3 class="font-h3 text-h3 mb-4">Materiales Digitales</h3>
+              <p class="text-blue-100 mb-6 text-sm">
+                Descarga los formatos oficiales para practicar el llenado de
+                actas.
+              </p>
+              <div class="space-y-4">
+                <a
+                  class="flex items-center justify-between p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors group text-white"
+                  href="#"
+                >
+                  <div class="flex items-center gap-3">
+                    <span
+                      class="material-symbols-outlined "
+                      data-icon="picture_as_pdf"
+                    >
+                      picture_as_pdf
+                    </span>
+                    <span class="font-semibold">Acta de Escrutinio</span>
+                  </div>
+                  <span
+                    class="material-symbols-outlined transition-opacity"
+                    data-icon="download"
+                  >
+                    download
+                  </span>
+                </a>
+                <a
+                  class="flex items-center justify-between p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors group text-white"
+                  href="#"
+                >
+                  <div class="flex items-center gap-3">
+                    <span
+                      class="material-symbols-outlined"
+                      data-icon="description"
+                    >
+                      description
+                    </span>
+                    <span class="font-semibold">Lista de Electores</span>
+                  </div>
+                  <span
+                    class="material-symbols-outlined transition-opacity"
+                    data-icon="download"
+                  >
+                    download
+                  </span>
+                </a>
+                <a
+                  class="flex items-center justify-between p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors group text-white"
+                  href="#"
+                >
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined" data-icon="movie">
+                      movie
+                    </span>
+                    <span class="font-semibold">Simulador de Voto</span>
+                  </div>
+                  <span
+                    class="material-symbols-outlined transition-opacity"
+                    data-icon="open_in_new"
+                  >
+                    open_in_new
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="bg-surface-container-high p-8 rounded-2xl border border-blue-100 space-y-6">
+              <h4 class="font-h3 text-[18px] text-primary">¿Tienes dudas?</h4>
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-4">
+                  <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm">
+                    <span
+                      class="material-symbols-outlined text-[20px]"
+                      data-icon="call"
+                    >
+                      call
+                    </span>
+                  </div>
+                  <div>
+                    <p class="text-[12px] text-slate-500 font-bold uppercase">
+                      Línea Gratuita
+                    </p>
+                    <p class="font-bold text-primary">0800-20-123</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4">
+                  <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary shadow-sm">
+                    <span
+                      class="material-symbols-outlined text-[20px]"
+                      data-icon="chat"
+                    >
+                      chat
+                    </span>
+                  </div>
+                  <div>
+                    <p class="text-[12px] text-slate-500 font-bold uppercase">
+                      WhatsApp
+                    </p>
+                    <p class="font-bold text-primary">+51 987 654 321</p>
+                  </div>
+                </div>
+              </div>
+              <button class="w-full bg-white border border-slate-200 py-3 rounded-lg text-primary font-semibold hover:bg-white/50 transition-colors active:scale-95">
+                Preguntas Frecuentes
+              </button>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden h-48 group">
+              <img
+                alt="Training Center"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="An interior shot of a contemporary, glass-walled civic training center in Lima. The space is filled with warm, morning sunlight casting long shadows. On the tables are official electoral folders and tablets. The atmosphere is quiet, professional, and ready for institutional education. The color palette is dominated by soft grays, whites, and deep institutional blues."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQIvZ4wJ-yBVdTn42bJ_GiqKhKGr8eViIzIa6-M_mlpO9zv4Kv8t0F_h7IW9plTcRhAB7DurRQBuSsASkLBjtZagPwVvvSMIOCpoeyoAukh0DxRjz_bTg02FntGgsW8LOhrTIBjMEG4fwC-7ZDM2G_VQ2sTvFgKduohyyLTz2AQmijeGyAa568k5cO6Uu13u9WHVhVy6XygUyuin5_zCoVKu_yVi41JoZ66PqVFEIyWAkcZmPXX93OMT_Z8uzdKhHV05z3KvZlSBo"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end">
+                <p class="text-white font-bold">Capacitación Presencial</p>
+                <p class="text-white/80 text-sm">Ubica tu centro más cercano</p>
+              </div>
+            </div>
+          </aside>
+        </section>
+        <section class="bg-secondary-container/5 rounded-3xl p-12 border border-secondary-container/20 flex flex-col md:flex-row items-center gap-8">
+          <div class="w-20 h-20 bg-secondary rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg shadow-secondary/20">
+            <span
+              class="material-symbols-outlined text-4xl"
+              data-icon="warning"
+              // style="font-variation-settings: &quot;FILL&quot; 1"
+            >
+              warning
+            </span>
+          </div>
+          <div class="space-y-2">
+            <h3 class="font-h3 text-h3 text-secondary">
+              Multa por Inasistencia
+            </h3>
+            <p class="text-on-surface-variant text-body-md">
+              Recuerda que la inasistencia como miembro de mesa conlleva una
+              multa de <strong class="text-secondary">S/ 257.50</strong>. Si no
+              puedes asistir por motivos de salud o fuerza mayor, debes
+              presentar tu excusa o justificación ante la ODPE hasta 5 días
+              antes de la elección.
+            </p>
+          </div>
+          <button class="bg-secondary text-white px-8 py-4 rounded-xl font-bold whitespace-nowrap hover:bg-red-700 transition-colors active:scale-95 shadow-lg shadow-red-900/10">
+            Tramitar Excusa
+          </button>
+        </section>
+      </main>
+      <footer class="bg-white border-t border-slate-100 pb-24 md:pb-8 pt-12 mt-12">
+        <div class="max-w-[1280px] mx-auto px-6 grid sm:grid-cols-1 md:grid-cols-4 gap-12">
+          <div class="col-span-1 md:col-span-2 space-y-6">
+            <div class="flex items-center gap-3">
+              <img
+                alt="Peru"
+                class="w-8 h-auto"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD2Evmdfm8c_0vb3uQKVsrmdXnGbpI_yiwGLjxlRKozdpLFka3wRKr7yU0fkTIdxKSj5qsI_9yYlouLHwkzOifbgO4Ea7s18ADNZfJq91gDeg87fZ6GKgeN2pwQFRObp33CgfyHFb7t6i2eAJt3wlV_Qu7NpUHyyGIEoDWuRVGCCK-zoDKC45cXDaNYgpbn8zvS8ovfBo3KVHtSVt9uOZskkgihpuvCNSToo9MYZrvvZeRk9q-Ga6N8m8-1ewgpCI65dMP9sgEHrE"
+              />
+              <span class="text-lg font-black text-[#003770] uppercase tracking-wider">
+                Perú Elige 2026
+              </span>
+            </div>
+            <p class="text-on-surface-variant max-w-sm">
+              Plataforma oficial de información electoral para los ciudadanos
+              peruanos. Transparencia y democracia para el bicentenario
+              consolidado.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-label-caps text-label-caps text-slate-400 mb-6 uppercase tracking-widest">
+              Instituciones
+            </h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-primary transition-colors"
+                  href="#"
+                >
+                  ONPE
+                </a>
+              </li>
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-primary transition-colors"
+                  href="#"
+                >
+                  JNE
+                </a>
+              </li>
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-primary transition-colors"
+                  href="#"
+                >
+                  RENIEC
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-label-caps text-label-caps text-slate-400 mb-6 uppercase tracking-widest">
+              Legal
+            </h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-primary transition-colors"
+                  href="#"
+                >
+                  Privacidad
+                </a>
+              </li>
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-primary transition-colors"
+                  href="#"
+                >
+                  Términos de Uso
+                </a>
+              </li>
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-primary transition-colors"
+                  href="#"
+                >
+                  Ley Electoral
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
-
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 mt-6 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-16 p-4 sm:p-5 md:p-6 lg:p-8 xl:p-10">
-        <Link to="/calendar" className="p-2 sm:p-3 md:p-4 lg:p-5 bg-blue-500 text-black border hover:bg-blue-600 transition-all duration-200 text-center font-semibold shadow-md hover:shadow-lg" style={{borderRadius: '12px'}}>
-          <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 sm:mb-3 md:mb-4">📅</div>
-          <h3 className="font-semibold text-xs sm:text-sm md:text-base lg:text-lg">Calendario Electoral</h3>
-          <p className="text-xs sm:text-sm md:text-base text-black">Ver fechas completas</p>
-        </Link>
-        
-        <Link to="/elector-info" className="p-3 sm:p-4 md:p-5 lg:p-6 xl:p-7 bg-green-500 text-black border hover:bg-green-600 transition-all duration-200 text-center font-semibold shadow-md hover:shadow-lg" style={{borderRadius: '12px'}}>
-          <div className="text-xl sm:text-2xl mb-2">📋</div>
-          <h3 className="font-semibold text-xs sm:text-sm md:text-base lg:text-lg">Info Electores</h3>
-          <p className="text-xs sm:text-sm md:text-base text-black">Guías generales</p>
-        </Link>
-        
-        <a href="https://eg2026.onpe.gob.pe" target="_blank" rel="noopener noreferrer" className="p-3 sm:p-4 md:p-5 lg:p-6 xl:p-7 bg-purple-500 text-black border hover:bg-purple-600 transition-all duration-200 text-center font-semibold shadow-md hover:shadow-lg" style={{borderRadius: '12px'}}>
-          <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 sm:mb-3 md:mb-4">🌐</div>
-          <h3 className="font-semibold text-xs sm:text-sm md:text-base lg:text-lg">Portal ONPE 2026</h3>
-          <p className="text-xs sm:text-sm md:text-base text-black">Sitio oficial</p>
-        </a>
-      </section>
-				</div>
-			</div>
-		</div>
-  )
+        <div class="max-w-[1280px] mx-auto px-6 mt-12 pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p class="text-sm text-slate-400">
+            © 2026 Gobierno del Perú. Todos los derechos reservados.
+          </p>
+          <div class="flex gap-6">
+            <a
+              class="text-slate-400 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined" data-icon="facebook">
+                social_leaderboard
+              </span>
+            </a>
+            <a
+              class="text-slate-400 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined" data-icon="x">
+                close
+              </span>
+            </a>
+            <a
+              class="text-slate-400 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span
+                class="material-symbols-outlined"
+                data-icon="youtube_activity"
+              >
+                youtube_activity
+              </span>
+            </a>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
 }
