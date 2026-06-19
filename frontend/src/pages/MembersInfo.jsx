@@ -503,7 +503,7 @@ export default function MembersInfo() {
         </div>
         <div class="max-w-[1280px] mx-auto px-6 mt-12 pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-4">
           <p class="text-sm text-slate-400">
-            © 2026 Gobierno del Perú. Todos los derechos reservados.
+            2026 derechos reservados po rla ONPE. Desarrollado por el equipo de innovación electoral. Diseñado para la transparencia y la participación ciudadana.
           </p>
           <div class="flex gap-6">
             <a
