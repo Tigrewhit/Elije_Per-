@@ -65,7 +65,7 @@ export default function Candidates(){
 		<div className='flex items-center justify-center min-h-screen'>
 			<div className='text-center'>
 				<div className='animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4'></div>
-				<h3 className='font-semibold text-lg mb-2'>Candidatos Presidenciales</h3>
+				<h3 className='font-semibold text-lg mb-2'>Candidatos a la presidencia</h3>
 				<p className='text-gray-600'>{isOnline ? 'Cargando candidatos...' : 'Cargando desde cache...'}</p>
 			</div>
 		</div>
